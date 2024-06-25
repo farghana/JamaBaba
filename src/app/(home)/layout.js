@@ -1,3 +1,5 @@
+import AuthProvider from "@/components/AuthProvider";
+
 import { Inter } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
@@ -12,6 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
+		<AuthProvider>
 		<html lang='en'>
 			<body>
 				<Header />
@@ -19,5 +22,6 @@ export default function RootLayout({ children }) {
 				<Footer />
 			</body>
 		</html>
+		</AuthProvider>
 	);
 }

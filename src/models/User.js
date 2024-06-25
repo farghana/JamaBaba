@@ -1,8 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "@/config/db_connection";
 
-class User extends Model {
-}
+class User extends Model {}
 
 User.init(
 	{
@@ -19,6 +18,11 @@ User.init(
 		},
 		email: {
 			type: DataTypes.STRING,
+			allowNull: false,
+			unique: true,
+			validate: {
+				isEmail: true,
+			},
 		},
 		password_hash: {
 			type: DataTypes.STRING,
@@ -33,12 +37,12 @@ User.init(
 		tableName: "users",
 		modelName: "User",
 		sequelize,
-    timestamps: true,
+		timestamps: true,
 		createdAt: "created_at",
 		updatedAt: "updated_at",
 		defaultScope: {
 			// exclude password hash by default
-			attributes: { exclude: ["password_hash"] },
+			// attributes: { exclude: ["password_hash"] },
 		},
 	}
 );
