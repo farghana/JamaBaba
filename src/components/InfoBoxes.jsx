@@ -28,7 +28,7 @@ const InfoBoxes = () => {
 							backgroundColor: "bg-blue-500",
 						}}
 					>
-						Add your deals and reach potentail buyers.
+						Add your deals and reach potential buyers.
 					</InfoBox>
 				</div>
 			</div>
